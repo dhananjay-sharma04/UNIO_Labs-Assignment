@@ -11,52 +11,13 @@
 <body>
     <form action="{{url('/')}}/register" method="post">
         @csrf
-        <!-- <pre>
-            @php
-                print_r($errors->all());
-            @endphp
-        </pre> -->
         <div class="container">
             <h1 class="text-center">Registeration</h1>
-            <div class="form-group">
-                <label for="">Name</label>
-                <input type="text" name="name" class="form-control" aria-describedby="helpID" value = "{{old('name')}}">
-                <span class="text-danger">
-                    @error('name')
-                        {{$message}}
-                    @enderror
-                </span>
-            </div>
-            <div class="form-group">
-                <label for="">Phone No.</label>
-                <input type="Number" name="phoneNo" class="form-control" aria-describedby="helpID" value = "{{old('phoneNo')}}">
-                <span class="text-danger">
-                    @error('phoneNo')
-                        {{$message}}
-                    @enderror
-                </span>
-            </div>
-            <div class="form-group">
-                <label for="">Email ID</label>
-                <input type="email" name="email" class="form-control" aria-describedby="helpID" value = "{{old('email')}}">
-                <span class="text-danger">
-                    @error('email')
-                        {{$message}}
-                    @enderror
-                </span>
-            </div>
-            <div class="form-group">
-                <label for="">Address</label>
-                <input type="text" name="address" class="form-control" aria-describedby="helpID" value = "{{old('address')}}">
-                <span class="text-danger">
-                    @error('address')
-                        {{$message}}
-                    @enderror
-                </span>
-            </div>
-            <button class="btn btn-primary">
-                Submit
-            </button>
+            <x-input type="text" name="name" label="Name"/>
+            <x-input type="number" name="phoneNo" label="Phone No."/>
+            <x-input type="email" name="email" label="Email"/>
+            <x-input type="text" name="address" label="Address"/>
+            <button class="btn btn-primary">Submit</button>
         </div>
     </form>
 </body>
